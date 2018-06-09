@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchoPane" prefHeight="453.0" prefWidth="740.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QualidadeDoTexto.controller.FXMLCoesaoECoerenciaController">
+   <children>
+      <TableView fx:id="tableViewCoesaoECoerencia" cacheHint="QUALITY" layoutX="14.0" layoutY="114.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="216.0" prefWidth="720.0" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="114.0">
+         <columns>
+            <TableColumn fx:id="tCDLNomeFicheiro" maxWidth="283.0" minWidth="100.0" prefWidth="283.0" resizable="false" text="Ficheiro/File" />
+            <TableColumn fx:id="tCDLCoerenciaLocal" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" resizable="false" text="F5" />
+            <TableColumn fx:id="tCDLTransicaoSS" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" resizable="false" text="F6" />
+            <TableColumn fx:id="tCDLTransicaoSO" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" resizable="false" text="F7" />
+            <TableColumn fx:id="tCDLTransicaoOO" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" resizable="false" text="F8" />
+            <TableColumn fx:id="tCDLTransicaoOS" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" resizable="false" text="F9" />
+            <TableColumn fx:id="tCDLMOperadorLogicoPorFrase" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F10" />
+            <TableColumn fx:id="tCDLDensidadeDePronomes" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F11" />
+            <TableColumn fx:id="tCDLSobreposicaoDeSubstantivos" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F12" />
+            <TableColumn fx:id="tCDLProporcaoDePronomes" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F13" />
+            <TableColumn fx:id="tCDLSemelhancaEntreFrasesIF" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F14" />
+            <TableColumn fx:id="tCDLSemelhancaEntreFrases" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F15" />
+            <TableColumn fx:id="tCDLSobreposicaoDePalavras" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F16" />
+            <TableColumn fx:id="tCDLPronomesPorSubstantivos" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F17" />
+            <TableColumn fx:id="tCDLMTLDPalavrasDeConteudo" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F18" />
+            <TableColumn fx:id="tCDLComprimentoDaPalavra" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F19" />
+            <TableColumn fx:id="tCDLComprimentoDaFrase" maxWidth="66.0" minWidth="66.0" prefWidth="66.0" text="F20" />
+         </columns>
+      </TableView>
+      <HBox layoutX="14.0" layoutY="25.0" prefHeight="41.0" prefWidth="359.0" spacing="30.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="371.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <VBox>
+               <children>
+                  <RadioButton fx:id="radioButtonDLTextoMaus" layoutX="272.0" layoutY="25.0" mnemonicParsing="false" onAction="#radioButtonSelected" text="Textos maus (sem qualidade)">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="group" />
+                     </toggleGroup>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButtonDLTextoBons" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#radioButtonSelected" text="Textos bons (com qualidade)" toggleGroup="$group">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </RadioButton>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" layoutX="243.0" layoutY="14.0" text="Mediadas de coesao e coerencia" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="20.0" layoutY="330.0" prefHeight="105.0" prefWidth="720.0" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label text="F5:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="F6:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="F7:" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="F9:" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="F10:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="F11:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Coerência local" GridPane.columnIndex="1" />
+            <Label text="Transição suj. -&gt; Suj." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Transição Suj. -&gt; Obj." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Transição Obj. -&gt; Suj." GridPane.columnIndex="3" />
+            <Label text="Média de operador lógicos por frase" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Densidade de pronomes" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="Proporção média pronomes por frase" GridPane.columnIndex="5">
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="F13:" GridPane.columnIndex="4">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="F14:" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="F15:" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Semelhança  entre frases (iniciais e finais)" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Semelhança média entre frases" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text=" F8:" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Transição Obj. -&gt; Obj  " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text=" F12:" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Sobreposição de substantivos entre frases" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label text=" F16:" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Sobreposição de palavras entre frases ajacentes" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Label text="F17:" GridPane.columnIndex="6">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="F20:" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="F19:" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="F18:" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label text="Comprimento médio de frases" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Label text="Comprimento médio de palavras" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Label text="MTLD de palavras de conteudo" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Label text="Proporção de pronomes por substantivos" GridPane.columnIndex="7" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="175.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="300.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="350.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="400.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Button fx:id="btnSair" layoutX="665.0" layoutY="81.0" mnemonicParsing="false" onAction="#sair" text="Fechar" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="81.0" />
+   </children>
+   <stylesheets>
+      <URL value="@/QualidadeDoTexto/css/fxmlmedidasbasicas.css" />
+   </stylesheets>
+</AnchorPane>

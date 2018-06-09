@@ -114,9 +114,9 @@ public class Ficheiros {
     public static List<String> getDicionario(String lingua) throws Exception {
         List<String> conteudo = new LinkedList<>();
         if (lingua.equalsIgnoreCase("en")) {
-            caminhoDoFicheiro = (new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Apoio/Dic_words_inglesh.txt");
+            caminhoDoFicheiro = ("/home/hp_probook/Dissertacao/Apoio/Dic_words_inglesh.txt");
         } else {
-            caminhoDoFicheiro = (new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Apoio/Dic_words_Portuguese.txt");
+            caminhoDoFicheiro = ("/home/hp_probook/Dissertacao/Apoio/Dic_words_Portuguese.txt");
         }
         String[] dic = lerFicheiro(caminhoDoFicheiro);
         Arrays.sort(dic);
@@ -215,14 +215,14 @@ public class Ficheiros {
                 }
                 if (totalPalavras == 200) {
                     if (lingua.equalsIgnoreCase("(pt)") && tipoFicheiro.equalsIgnoreCase("Bons")) {
-                        ficheiro = new File(new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Fractais/Bons/pt/Fractal" + num + "(pt).txt");
+                        ficheiro = new File("/home/hp_probook/Dissertacao/Corpora/Fractais/Bons/pt/Fractal" + num + "(pt).txt");
                     } else if (lingua.equalsIgnoreCase("(pt)") && tipoFicheiro.equalsIgnoreCase("Maus")) {
-                        ficheiro = new File(new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Fractais/Maus/pt/Fractal" + num + "(pt).txt");
+                        ficheiro = new File("/home/hp_probook/Dissertacao/Corpora/Fractais/Maus/pt/Fractal" + num + "(pt).txt");
                     }
                     if (lingua.equalsIgnoreCase("(en)") && tipoFicheiro.equalsIgnoreCase("Bons")) {
-                        ficheiro = new File(new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Fractais/Bons/en/Fractal" + num + "(en).txt");
+                        ficheiro = new File("/home/hp_probook/Dissertacao/Corpora/Fractais/Bons/en/Fractal" + num + "(en).txt");
                     } else if (lingua.equalsIgnoreCase("(en)") && tipoFicheiro.equalsIgnoreCase("Maus")) {
-                        ficheiro = new File(new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Fractais/Maus/en/Fractal" + num + "(en).txt");
+                        ficheiro = new File("/home/hp_probook/Dissertacao/Corpora/Fractais/Maus/en/Fractal" + num + "(en).txt");
                     }
                     if (!ficheiro.exists()) {
                         ficheiro.createNewFile();
@@ -1055,9 +1055,9 @@ public class Ficheiros {
         corpora.setTotalTypes(0);
 
         if (tipo.equalsIgnoreCase("Bons")) {
-            file = new File(new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Bons");
+            file = new File("/home/hp_probook/Dissertacao/Corpora/Bons");
         } else {
-            file = new File(new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Maus");
+            file = new File("/home/hp_probook/Dissertacao/Corpora/Maus");
         }
         if (file.isDirectory()) {
 
@@ -1170,9 +1170,9 @@ public class Ficheiros {
 
                 caminhoDoFicheiro = ficheiro.getAbsolutePath();
                 if (tipo.equalsIgnoreCase("MausPalavras")) {
-                    caminhoDoFicheiro2 = new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Maus/" + nomeFicheiro;
+                    caminhoDoFicheiro2 = "/home/hp_probook/Dissertacao/Corpora/Maus/" + nomeFicheiro;
                 } else if (tipo.equalsIgnoreCase("BonsPalavras")) {
-                    caminhoDoFicheiro2 = new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Bons/" + nomeFicheiro;
+                    caminhoDoFicheiro2 = "/home/hp_probook/Dissertacao/Corpora/Bons/" + nomeFicheiro;
                 }
                 if (lingua.equalsIgnoreCase("(pt)")) {
 
@@ -1315,10 +1315,10 @@ public class Ficheiros {
     public static void fractais() throws Exception {
         for (int i = 0; i <= 1; i++) {
             if (i == 0) {
-                pasta = new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Fractais/MausPalavras";
+                pasta = "/home/hp_probook/Dissertacao/Corpora/Fractais/MausPalavras";
                 processarFractais(pasta, "MausPalavras");
             } else if (i == 1) {
-                pasta = new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Fractais/BonsPalavras";
+                pasta = "/home/hp_probook/Dissertacao/Corpora/Fractais/BonsPalavras";
                 processarFractais(pasta, "BonsPalavras");
             }
         }
@@ -1340,9 +1340,9 @@ public class Ficheiros {
 //            }
             caminhoDoFicheiro = ficheiro.getAbsolutePath();
             if (tipo.equalsIgnoreCase("MausPalavras")) {
-                caminhoDoFicheiro2 = new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Fractais/Maus/" + ficheiro.getName();
+                caminhoDoFicheiro2 = "/home/hp_probook/Dissertacao/Corpora/Fractais/Maus/" + ficheiro.getName();
             } else if (tipo.equalsIgnoreCase("BonsPalavras")) {
-                caminhoDoFicheiro2 = new File("..").getCanonicalPath() + "/Dissertacao/src/QualidadeDoTexto/Corpora/Fractais/Bons/" + ficheiro.getName();
+                caminhoDoFicheiro2 = "/home/hp_probook/Dissertacao/Corpora/Fractais/Bons/" + ficheiro.getName();
             }
             for (int i = 0; i <= 1; i++) {
                 if (i == 0) {
